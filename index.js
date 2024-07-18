@@ -19,6 +19,18 @@ const resolvers = {
     authors() {
       return db.authors;
     },
+    review(
+      _,
+      args // receives 3 arguments: parent,args i.e arguments,context. we can get any query variable send by used in this args variable. we have defined in type Query that it receives id as argument so using it
+    ) {
+      return db.reviews.find((review) => review.id === args.id);
+    },
+    game(_, args) {
+      return db.games.find((game) => game.id === args.id);
+    },
+    author(_, args) {
+      return db.authors.find((author) => author.id === args.id);
+    },
   },
 };
 
