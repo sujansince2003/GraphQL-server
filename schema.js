@@ -44,13 +44,19 @@ type Query{
 
 type Mutation{
     deleteGame(id:ID!):[Game]       #delete game with given id and return the remaining data
-    addGame(game:GameInputs):Game
+    addGame(game:addGameInputs):Game
+    updateGame(id:ID!,editGame:editGameInputs):Game
 
 }
 
-input GameInputs{
+input addGameInputs{
     title:String!
     platform:[String!]!
+    
+}
+input editGameInputs{
+    title:String!
+    platform:[String!]
     
 }
 
