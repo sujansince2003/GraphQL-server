@@ -58,6 +58,15 @@ const resolvers = {
       db.games = db.games.filter((game) => game.id !== args.id);
       return db.games;
     },
+
+    addGame(_, args) {
+      let gameObj = {
+        ...args.game,
+        id: Math.floor(Math.random() * 10000).toString(),
+      };
+      db.games.push(gameObj);
+      return gameObj;
+    },
   },
 };
 
