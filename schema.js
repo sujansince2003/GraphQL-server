@@ -39,4 +39,14 @@ type Query{
     authors:[Author]
     author(id:ID!):Author
 }
+
+#for adding and delete data 
+
+type Mutation{
+    deleteGame(id:ID!):[Game]       #delete game with given id and return the remaining data
+}
+
+
+
+
 `;
